@@ -26,7 +26,9 @@ const App = defineComponent({
 
   watch: {
     picked: function (newPicked, oldPicked) {
-      fetchMeetupById(Number(this.picked)).then((res) => (this.meetup = res.title));
+      fetchMeetupById(Number(newPicked)).then((res) => {
+        this.meetup = res.title;
+      });
     },
   },
 });
