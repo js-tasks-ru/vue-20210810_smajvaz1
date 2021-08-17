@@ -6,13 +6,13 @@ const Root = defineComponent({
 
   data() {
     return {
-      count: 0,
+      counter: 0,
     };
   },
 
   methods: {
-    ss: function (event) {
-      this.count++;
+    updateCounter: function (event) {
+      this.counter++;
     },
   },
 
