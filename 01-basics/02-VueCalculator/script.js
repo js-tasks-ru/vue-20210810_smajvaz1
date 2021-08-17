@@ -16,13 +16,13 @@ const Root = defineComponent({
     result: function () {
       switch (this.picked) {
         case 'sum':
-          return Number(this.a) + Number(this.b);
+          return this.a + this.b;
         case 'subtract':
-          return Number(this.a) - Number(this.b);
+          return this.a - this.b;
         case 'multiply':
-          return Number(this.a) * Number(this.b);
+          return this.a * this.b;
         case 'divide':
-          return Number(this.a) / Number(this.b);
+          return this.a / this.b;
         default:
           return 0;
       }
