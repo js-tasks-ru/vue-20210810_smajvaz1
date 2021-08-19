@@ -32,18 +32,21 @@ const Root = defineComponent({
 
   data() {
     return {
-      emails: emails,
       filter: '',
     };
   },
 
-  watch: {
-    filter: function (newFilter, oldFilter) {
-      let emailList = document.querySelectorAll('li');
-      for (let i = 0; i < emails.length; i++){
-        if (newFilter != '' && emails[i].indexOf(this.filter) != -1) emailList[i].classList.add('marked');
-        else emailList[i].classList = '';
+  computed: {
+    emailsObject: function () {
+      let emailsArray = [];
+      for (let i = 0; i < emails.length; i++) {
+        emailsArray.push({});
+        emailsArray[i].email = emails[i];
+        if (this.filter != '' && emails[i].toLowerCase().indexOf(this.filter.toLowerCase()) != -1)
+          emailsArray[i].selected = true;
+        else emailsArray[i].selected = false;
       }
+      return emailsArray;
     },
   },
 });
