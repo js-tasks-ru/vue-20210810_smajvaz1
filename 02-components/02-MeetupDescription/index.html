@@ -9,7 +9,7 @@
   <body>
     <div id="app" class="sample container meetup__content">
       <p>
-        <select v-model="selectedMeetup" v-model.number="selectedMeetup">
+        <select v-model.number="selectedMeetup">
           <option v-for="(meetup, index) in meetups" :key="meetup.id" :value="index">
             {{ index }}: {{ meetup.title }}
           </option>
